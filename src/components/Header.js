@@ -27,13 +27,11 @@ const Header = (props) => {
   }, [userName]);
 
   const handleAuth = () => {
-    // console.log("Called ");
     if (!userName) {
       auth
         .signInWithPopup(provider)
         .then((result) => {
           setUser(result.user);
-          // console.log(result);
         })
         .catch((error) => {
           alert(error.message);
